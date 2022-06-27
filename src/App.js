@@ -7,6 +7,7 @@ import NotFound from "./Shared/NotFound/NotFound";
 import Inventory from "./Pages/Home/Inventory/Inventory";
 import Login from "./Pages/Login/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
+import Register from "./Pages/Login/Register/Register";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         ></Route>
 
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
 
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
