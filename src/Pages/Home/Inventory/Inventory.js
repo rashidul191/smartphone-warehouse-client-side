@@ -46,15 +46,15 @@ const Inventory = () => {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center text-info mb-sm-5">
-        Inventory {product.name}
-      </h2>
+      <h2 className="text-center text-info mb-sm-5">Update Inventory</h2>
       <div className="row row-cols-1 row-cols-sm-2 g-5">
         <div className="col border text-center py-3">
           <img width={300} src={product?.img} alt="" />
           <h4>{product?.name}</h4>
           <p>Quantity: {currentQuantity}</p>
-          <button onClick={handleDelivered} className ="btn btn-success w-50">Delivered</button>
+          <button onClick={handleDelivered} className="btn btn-success w-50">
+            Delivered
+          </button>
         </div>
         <div className="col">
           {/* Add Quantity Form */}

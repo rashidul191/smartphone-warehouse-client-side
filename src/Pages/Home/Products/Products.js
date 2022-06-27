@@ -12,9 +12,7 @@ const Products = () => {
   };
   return (
     <div className="my-5 container">
-      <h2 className="text-info text-center my-4">
-        Inventory : {products.length}
-      </h2>
+      <h2 className="text-info text-center my-4">Inventory</h2>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
         {products.map((product) => (
           <Product

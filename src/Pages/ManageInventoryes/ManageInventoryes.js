@@ -1,16 +1,28 @@
 import React from "react";
 import useInventory from "../../hook/useInventory";
-import ManageInventory from "./ManageInventory";
+import ManageInventory from "../ManageInventory/ManageInventory";
 
 const ManageInventoryes = () => {
-  const [products, setProducts] = useInventory();
+  const [products, setProduct] = useInventory();
 
-  const handleDeleteItems = (id) => {
+  const handleDeleteItem = (id) => {
     // console.log(id)
-    const product = products.filter((product) => product._id !== id);
-    var result = window.confirm("Are you sure?");
-    if (result) {
-      setProducts(product);
+    // const product = products.filter((product) => product._id !== id);
+    var proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remainProduct = products.filter(
+            (product) => product._id !== id
+          );
+
+          setProduct(remainProduct);
+        });
     }
   };
 
@@ -22,11 +34,10 @@ const ManageInventoryes = () => {
           <ManageInventory
             key={product._id}
             product={product}
-            handleDeleteItems={handleDeleteItems}
+            handleDeleteItem={handleDeleteItem}
           ></ManageInventory>
         ))}
       </div>
-      
     </div>
   );
 };

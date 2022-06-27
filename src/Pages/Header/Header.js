@@ -28,9 +28,7 @@ const Header = () => {
               <CustomLink to="/home">Home</CustomLink>
             </Nav.Link>
 
-            <Nav.Link className="mx-3">
-              <CustomLink to="/inventory">Inventory</CustomLink>
-            </Nav.Link>
+           
             <Nav.Link className="mx-3">
               <CustomLink to="/blogs">Blogs</CustomLink>
             </Nav.Link>
@@ -41,8 +39,11 @@ const Header = () => {
                   <CustomLink to="/manageInventory">Manager Inventory</CustomLink>
                 </Nav.Link>
                 <Nav.Link className="mx-3">
-                  <CustomLink to="/addnewitem">Add New Item</CustomLink>
+                  <CustomLink to="/additem">Add Item</CustomLink>
                 </Nav.Link>
+                <Nav.Link className="mx-3">
+              <CustomLink to="/myitems">My Item</CustomLink>
+            </Nav.Link>
               </>
             )}
             <Nav.Link className="mx-3">
