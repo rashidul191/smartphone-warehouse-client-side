@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Shared/Footer/Footer";
 import Header from "./Pages/Header/Header";
@@ -31,6 +32,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }
