@@ -1,17 +1,18 @@
 [
   {
+    
     "_id": "1AB01",
     "name": "Samsung Galaxy S22 Ultra",
     "price": "899",
     "img": "https://i.ibb.co/H2PZTp3/phone-1.webp",
-    "quantity": "102",
+    "quantity": 102,
     "supplierName": "Jakir Hossan",
     "description": "Finding the right smartphone for your budget can be tricky, especially when there are so many expensive contracts to sift through. To make things easier, we've rounded up everything you need to know about buying your perfect smartphone, as well as what you need to know about picking out a contract."
   },
   {
     "_id": "1AB02",
     "name": "Samsung Galaxy",
-    "price": "699",
+    "price": 699,
     "img": "https://i.ibb.co/svk7bJw/phone-2.jpg",
     "quantity": "90",
     "supplierName": "Mehedi Sorkar",
@@ -20,7 +21,7 @@
   {
     "_id": "1AB03",
     "name": "mobile phones witnessed a massive growth",
-    "price": "499",
+    "price": 499,
     "img": "https://i.ibb.co/fqR8nhm/phone-3.png",
     "quantity": "150",
     "supplierName": "Aslam Khan",
@@ -29,7 +30,7 @@
   {
     "_id": "1AB04",
     "name": "Best smartphone : iPhone, OnePlus",
-    "price": "359",
+    "price": 359,
     "img": "https://i.ibb.co/2jjqDPg/phone-4.webp",
     "quantity": "70",
     "supplierName": "Drandon Rased",
@@ -38,7 +39,7 @@
   {
     "_id": "1AB05",
     "name": "Apple iPhone 11",
-    "price": "599",
+    "price": 599,
     "img": "https://i.ibb.co/nwqTdzm/phone-5.jpg",
     "quantity": "55",
     "supplierName": "Shakil Ahamed",
@@ -49,7 +50,7 @@
     "name": "iPhone 13 Pro Best iPhone",
     "price": "189.55",
     "img": "https://i.ibb.co/Scsqrz8/phone-6.webp",
-    "quantity": "112",
+    "quantity": 112,
     "supplierName": "Rakibul Islam",
     "description": "At first glance, the 13 Pro uses a familiar 6.1in Super Retina XDR display but Apple has finally decided to bring ProMotion to the iPhone; with the panel now topping out at a super-smooth 120Hz. The notch is also 20% smaller too. As for the cameras, you can expect bigger sensors and faster apertures that mean improved low light performance, far more comparable quality when switching to the phone’s ultrawide (which also now offers macro shooting capabilities) and a 3x telephoto snapper, letting you shoot further than before."
   }

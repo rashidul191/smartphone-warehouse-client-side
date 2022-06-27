@@ -34,6 +34,17 @@ const Header = () => {
             <Nav.Link className="mx-3">
               <CustomLink to="/blogs">Blogs</CustomLink>
             </Nav.Link>
+
+            {user && (
+              <>
+                <Nav.Link className="mx-3">
+                  <CustomLink to="/manageInventory">Manager Inventory</CustomLink>
+                </Nav.Link>
+                <Nav.Link className="mx-3">
+                  <CustomLink to="/addnewitem">Add New Item</CustomLink>
+                </Nav.Link>
+              </>
+            )}
             <Nav.Link className="mx-3">
               {user ? (
                 <button onClick={handleSignOut} className="btn btn-danger">
