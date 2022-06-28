@@ -1,46 +1,59 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Inventory = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
-
+  const [product, setProduct] = useState({});
+  const { name, img, price, quantity } = product;
+  const updateQuantity = parseInt(quantity);
   useEffect(() => {
-    const url = ` http://localhost:5000/product/${id}`;
+    const url = `http://localhost:5000/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
       });
-  }, [id]);
+  }, [id, product]);
 
-  //   const productDetails = products.find((product) => product._id === id);
-
-  //   const preQuantityText = productDetails?.quantity;
-
-  let [quantity, setQuantity] = useState(0);
-  console.log(quantity);
-
-  let currentQuantity;
-  if (quantity > 0) {
-    console.log(quantity);
-    currentQuantity = quantity;
-  } else {
-    currentQuantity = 0;
-  }
   // handle Delivered btn
   const handleDelivered = () => {
-    let newQuantity = quantity - 1;
-    setQuantity(newQuantity);
+    const newQuantity = updateQuantity - 1;
+    const url = `http://localhost:5000/product/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        quantity: newQuantity,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        toast.success("Delivery Successfully!");
+      });
   };
 
   // handle add Quantity btn
   const handleAddQuantity = (event) => {
     event.preventDefault();
-    const newQuantity = event.target.quantity.value;
-    if (newQuantity > 0) {
-      setQuantity(newQuantity);
+    const userQuantity = parseInt(event.target.quantity.value);
+    const addQuantity = userQuantity + updateQuantity;
+    const url = ` http://localhost:5000/product/${id}`;
+    if (addQuantity) {
+      fetch(url, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          quantity: addQuantity,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setProduct(data);
+          toast.success("Add Quantity Successfully !!");
+        });
     }
   };
 
@@ -49,9 +62,11 @@ const Inventory = () => {
       <h2 className="text-center text-info mb-sm-5">Update Inventory</h2>
       <div className="row row-cols-1 row-cols-sm-2 g-5">
         <div className="col border text-center py-3">
-          <img width={300} src={product?.img} alt="" />
-          <h4>{product?.name}</h4>
-          <p>Quantity: {currentQuantity}</p>
+          <img width={300} src={img} alt="" />
+          <h4>{name}</h4>
+          <p>Price: ${price}</p>
+          <p>Quantity: {quantity}</p>
+          <p></p>
           <button onClick={handleDelivered} className="btn btn-success w-50">
             Delivered
           </button>
