@@ -9,7 +9,7 @@ const Inventory = () => {
   const { name, img, price, quantity } = product;
   const updateQuantity = parseInt(quantity);
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +20,7 @@ const Inventory = () => {
   // handle Delivered btn
   const handleDelivered = () => {
     const newQuantity = updateQuantity - 1;
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },
@@ -40,7 +40,7 @@ const Inventory = () => {
     event.preventDefault();
     const userQuantity = parseInt(event.target.quantity.value);
     const addQuantity = userQuantity + updateQuantity;
-    const url = ` http://localhost:5000/product/${id}`;
+    const url = ` https://pacific-castle-49013.herokuapp.com/product/${id}`;
     if (addQuantity) {
       fetch(url, {
         method: "PUT",

@@ -10,7 +10,7 @@ const MyItems = () => {
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/product?email=${email}`;
+      const url = `https://pacific-castle-49013.herokuapp.com/product?email=${email}`;
       const { data } = await axios.get(url);
       setMyItems(data);
     };
@@ -20,11 +20,11 @@ const MyItems = () => {
   const handleDeleteItem = (id) => {
     const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
-        .then((res) => res.json())
+         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           const remainItem = myItems.filter((item) => item._id !== id);

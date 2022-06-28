@@ -12,7 +12,7 @@ const ManageInventoryes = () => {
     // const product = products.filter((product) => product._id !== id);
     const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
