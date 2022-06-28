@@ -6,7 +6,7 @@ const ContactUs = () => {
     const handleMassageSubmit = (event)=>{
         event.preventDefault();
         const email = event.target.email.value;
-        const message = event.target.message.value;
+        const message = event.target.massage.value;
         if(email || message){
             toast.success("Massage Successfully !!")
             event.target.reset()
