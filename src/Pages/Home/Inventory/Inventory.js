@@ -40,7 +40,7 @@ const Inventory = () => {
     event.preventDefault();
     const userQuantity = parseInt(event.target.quantity.value);
     const addQuantity = userQuantity + updateQuantity;
-    const url = ` https://pacific-castle-49013.herokuapp.com/product/${id}`;
+    const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
     if (addQuantity) {
       fetch(url, {
         method: "PUT",

@@ -12,7 +12,7 @@ const AddNewItem = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    const url = `https://pacific-castle-49013.herokuapp.com/product`;
+    const url = `https://pacific-castle-49013.herokuapp.com/products`;
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },

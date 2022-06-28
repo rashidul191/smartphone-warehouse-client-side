@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useInventory from "../../hook/useInventory";
@@ -7,9 +7,17 @@ import ManageInventory from "../ManageInventory/ManageInventory";
 const ManageInventoryes = () => {
   const [products, setProduct] = useInventory();
 
+  useEffect(() => {
+    // const url = `https://pacific-castle-49013.herokuapp.com/products`;
+    const url = `https://pacific-castle-49013.herokuapp.com/products`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
+  }, []);
+
   const handleDeleteItem = (id) => {
-    // console.log(id)
-    // const product = products.filter((product) => product._id !== id);
     const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
       const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
