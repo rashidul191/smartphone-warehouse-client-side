@@ -8,7 +8,6 @@ const ManageInventoryes = () => {
   const [products, setProduct] = useInventory();
 
   useEffect(() => {
-    // const url = `https://pacific-castle-49013.herokuapp.com/products`;
     const url = `https://pacific-castle-49013.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
