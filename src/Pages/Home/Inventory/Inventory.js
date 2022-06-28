@@ -53,6 +53,7 @@ const Inventory = () => {
         .then((data) => {
           setProduct(data);
           toast.success("Add Quantity Successfully !!");
+          event.target.reset()
         });
     }
   };

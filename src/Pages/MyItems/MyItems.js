@@ -21,7 +21,6 @@ const MyItems = () => {
     const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
       const url = `http://localhost:5000/product/${id}`;
-
       fetch(url, {
         method: "DELETE",
       })
@@ -34,8 +33,8 @@ const MyItems = () => {
     }
   };
   return (
-    <div className="container my-5">
-      <h2 className="text-center text-info">My Items</h2>
+    <div className="container my-sm-5">
+      <h2 className="text-center text-info mb-3">My Items</h2>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
         {myItems.map((item) => (
           <MyItem

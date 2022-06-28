@@ -30,46 +30,46 @@ const AddNewItem = () => {
     <div className="container my-5 w-50 mx-auto">
       <h2 className="text-center text-info">Add New Item</h2>
       <form
-        className="d-flex flex-column border border-3 border-success p-4"
+        className="d-flex flex-column border border-3 border-success p-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
           readOnly
-          className="mb-2"
+          className="mb-3"
           {...register("email")}
           value={user?.email}
         />
         <input
-          className="mb-2"
+          className="mb-3"
           {...register("name")}
           placeholder="product name"
         />
         <input
-          className="mb-2"
+          className="mb-3"
           type="text"
           {...register("img")}
           placeholder="photo url"
         />
 
         <input
-          className="mb-2"
+          className="mb-3"
           type="number"
           {...register("price")}
           placeholder="price"
         />
         <input
-          className="mb-2"
+          className="mb-3"
           type="number"
           {...register("quantity")}
           placeholder="quantity"
         />
         <textarea
-          className="mb-2"
+          className="mb-3"
           {...register("description")}
           placeholder="description"
         />
         <input
-          className="mb-2"
+          className="mb-3"
           type="text"
           {...register("supplierName")}
           placeholder="Supplier Name"

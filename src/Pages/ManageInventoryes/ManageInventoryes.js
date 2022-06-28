@@ -1,4 +1,6 @@
 import React from "react";
+import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useInventory from "../../hook/useInventory";
 import ManageInventory from "../ManageInventory/ManageInventory";
 
@@ -28,14 +30,31 @@ const ManageInventoryes = () => {
   return (
     <div className="container my-5">
       <h2 className="text-center text-info">Manage Inventory</h2>
-      <div className="row row-cols-1 row-cols-sm-2 g-5 my-5">
-        {products.map((product) => (
-          <ManageInventory
-            key={product._id}
-            product={product}
-            handleDeleteItem={handleDeleteItem}
-          ></ManageInventory>
-        ))}
+      <div className="w-75 mx-auto">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <ManageInventory
+                key={product._id}
+                product={product}
+                handleDeleteItem={handleDeleteItem}
+              ></ManageInventory>
+            ))}
+          </tbody>
+        </Table>
+        <div className="text-center">
+          <Link to="/additem">
+            <button className="btn btn-warning w-25">Add Item</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
