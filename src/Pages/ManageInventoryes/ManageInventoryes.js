@@ -8,7 +8,7 @@ const ManageInventoryes = () => {
   const handleDeleteItem = (id) => {
     // console.log(id)
     // const product = products.filter((product) => product._id !== id);
-    var proceed = window.confirm("Are you sure?");
+    const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
       const url = `http://localhost:5000/product/${id}`;
       fetch(url, {
@@ -20,7 +20,6 @@ const ManageInventoryes = () => {
           const remainProduct = products.filter(
             (product) => product._id !== id
           );
-
           setProduct(remainProduct);
         });
     }

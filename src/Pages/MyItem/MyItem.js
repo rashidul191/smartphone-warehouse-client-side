@@ -1,8 +1,8 @@
 import React from "react";
 
-const Product = (props) => {
-  const { handleUpdateProduct, product } = props;
-  const { name, img, price, quantity, supplierName, _id, description } = product;
+const MyItem = (props) => {
+  const { handleDeleteItem, item } = props;
+  const { name, img, price, quantity, supplierName, description, _id } = item;
   return (
     <div className="col">
       <div className="card">
@@ -21,10 +21,10 @@ const Product = (props) => {
           <p>Description : {description.slice(0, 50)}....</p>
 
           <button
-            onClick={() => handleUpdateProduct(_id)}
-            className="btn btn-info w-100"
+            onClick={() => handleDeleteItem(_id)}
+            className="btn btn-danger w-100"
           >
-            Update
+            Delete
           </button>
         </div>
       </div>
@@ -32,4 +32,4 @@ const Product = (props) => {
   );
 };
 
-export default Product;
+export default MyItem;
