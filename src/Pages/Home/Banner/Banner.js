@@ -23,7 +23,6 @@ const Banner = () => {
           src="https://i.ibb.co/cbT3Wqy/banner-2.png"
           alt="Second slide"
         />
-
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -32,7 +31,6 @@ const Banner = () => {
           src="https://i.ibb.co/rxvJbvP/banner-3.png"
           alt="Third slide"
         />
-
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
     </Carousel>

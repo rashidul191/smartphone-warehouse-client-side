@@ -10,9 +10,7 @@ const AddNewItem = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-
-    const url = `https://pacific-castle-49013.herokuapp.com/products`;
+    const url = `https://pacific-castle-49013.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -20,9 +18,12 @@ const AddNewItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-        toast.success("Add Item successfully!");
-        navigate("/myitems");
+        if (result?.insertedId) {
+          toast.success("Add Item successfully!");
+          navigate("/myItems");
+        } else {
+          toast.error("Sorry! Item is not add");
+        }
       });
   };
 

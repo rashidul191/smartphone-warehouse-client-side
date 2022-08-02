@@ -28,7 +28,6 @@ const Header = () => {
               <CustomLink to="/home">Home</CustomLink>
             </Nav.Link>
 
-           
             <Nav.Link className="mx-3">
               <CustomLink to="/blogs">Blogs</CustomLink>
             </Nav.Link>
@@ -36,14 +35,16 @@ const Header = () => {
             {user && (
               <>
                 <Nav.Link className="mx-3">
-                  <CustomLink to="/manageInventory">Manager Inventory</CustomLink>
+                  <CustomLink to="/manageInventory">
+                    Manager Inventory
+                  </CustomLink>
                 </Nav.Link>
                 <Nav.Link className="mx-3">
-                  <CustomLink to="/additem">Add Item</CustomLink>
+                  <CustomLink to="/addItem">Add Item</CustomLink>
                 </Nav.Link>
                 <Nav.Link className="mx-3">
-              <CustomLink to="/myitems">My Item</CustomLink>
-            </Nav.Link>
+                  <CustomLink to="/myItems">My Item</CustomLink>
+                </Nav.Link>
               </>
             )}
             <Nav.Link className="mx-3">

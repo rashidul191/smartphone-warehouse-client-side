@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Shared/Footer/Footer";
 import Header from "./Pages/Header/Header";
@@ -22,6 +22,9 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/blogs" element={<Blog></Blog>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+        {/* Require Auth Route start */}
         <Route
           path="/inventory/:id"
           element={
@@ -39,28 +42,24 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-
         <Route
-          path="/additem"
+          path="/addItem"
           element={
             <RequireAuth>
               <AddNewItem></AddNewItem>
             </RequireAuth>
           }
         ></Route>
-
         <Route
-          path="/myitems"
+          path="/myItems"
           element={
             <RequireAuth>
               <MyItems></MyItems>
             </RequireAuth>
           }
         ></Route>
-
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
-
+        {/* Require Auth Route end */}
+        {/* Not Found Route */}
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

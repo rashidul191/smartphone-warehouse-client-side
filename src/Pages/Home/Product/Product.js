@@ -2,7 +2,8 @@ import React from "react";
 
 const Product = (props) => {
   const { handleUpdateProduct, product } = props;
-  const { name, img, price, quantity, supplierName, _id, description } = product;
+  const { name, img, price, quantity, supplierName, _id, description } =
+    product;
   return (
     <div className="col">
       <div className="card">
@@ -19,7 +20,6 @@ const Product = (props) => {
           <p className="m-0">Quantity : {quantity}</p>
           <p>Supplier : {supplierName}</p>
           <p>Description : {description.slice(0, 50)}....</p>
-
           <button
             onClick={() => handleUpdateProduct(_id)}
             className="btn btn-info w-100"

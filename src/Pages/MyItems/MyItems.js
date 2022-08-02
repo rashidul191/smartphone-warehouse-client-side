@@ -7,6 +7,7 @@ import MyItem from "../MyItem/MyItem";
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [myItems, setMyItems] = useState([]);
+
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
@@ -15,7 +16,7 @@ const MyItems = () => {
       setMyItems(data);
     };
     getMyItems();
-  }, []);
+  }, [user]);
 
   const handleDeleteItem = (id) => {
     const proceed = window.confirm("Are you sure? Delete it!");

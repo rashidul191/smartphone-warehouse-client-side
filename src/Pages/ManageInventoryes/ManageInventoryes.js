@@ -14,7 +14,7 @@ const ManageInventoryes = () => {
       .then((data) => {
         setProduct(data);
       });
-  }, []);
+  }, [setProduct]);
 
   const handleDeleteItem = (id) => {
     const proceed = window.confirm("Are you sure? Delete it!");
@@ -25,11 +25,12 @@ const ManageInventoryes = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          const remainProduct = products.filter(
-            (product) => product._id !== id
-          );
-          setProduct(remainProduct);
+          if (data?.deletedCount > 0) {
+            const remainProduct = products.filter(
+              (product) => product._id !== id
+            );
+            setProduct(remainProduct);
+          }
         });
     }
   };
@@ -58,7 +59,7 @@ const ManageInventoryes = () => {
           </tbody>
         </Table>
         <div className="text-center">
-          <Link to="/additem">
+          <Link to="/addItem">
             <button className="btn btn-warning w-25">Add Item</button>
           </Link>
         </div>

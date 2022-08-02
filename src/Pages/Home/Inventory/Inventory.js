@@ -73,7 +73,7 @@ const Inventory = () => {
           </button>
         </div>
         <div className="col">
-          {/* Add Quantity Form */}
+          {/* Add Quantity Form  Start*/}
           <Form onSubmit={handleAddQuantity}>
             <Form.Group className="mb-3" controlId="formBasicAddQuantity">
               <Form.Control
@@ -86,6 +86,7 @@ const Inventory = () => {
               Add Quantity
             </Button>
           </Form>
+          {/* Add Quantity Form  End*/}
         </div>
       </div>
     </div>
