@@ -6,7 +6,7 @@ const Review = () => {
    
   return (
     <div>
-     <h2>Review page coming soon......</h2>
+     {/* <h2>Review page coming soon......</h2> */}
     </div>
   );
   
