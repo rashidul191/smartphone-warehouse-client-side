@@ -10,21 +10,32 @@ const AddNewItem = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = `https://pacific-castle-49013.herokuapp.com/product`;
-    fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result?.insertedId) {
-          toast.success("Add Item successfully!");
-          navigate("/myItems");
-        } else {
-          toast.error("Sorry! Item is not add");
-        }
-      });
+    if (
+      data?.name &&
+      data?.img &&
+      data?.name &&
+      data?.price &&
+      data?.quantity &&
+      data?.supplierName
+    ) {
+      const url = `https://pacific-castle-49013.herokuapp.com/product`;
+      fetch(url, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result?.insertedId) {
+            toast.success("Add Item successfully!");
+            navigate("/myItems");
+          } else {
+            toast.error("Sorry! Item is not add");
+          }
+        });
+    } else {
+      toast.error("Item filed is empty, Try again");
+    }
   };
 
   return (
@@ -64,11 +75,16 @@ const AddNewItem = () => {
           {...register("quantity")}
           placeholder="quantity"
         />
+
         <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="5"
           className="mb-3"
           {...register("description")}
           placeholder="description"
-        />
+        ></textarea>
         <input
           className="mb-3"
           type="text"

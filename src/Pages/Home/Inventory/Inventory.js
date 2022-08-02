@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import Loading from "../../../Shared/Loading/Loading";
 
 const Inventory = () => {
   const { id } = useParams();
@@ -57,6 +58,10 @@ const Inventory = () => {
         });
     }
   };
+
+  if(product.length === 0){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="container my-5">

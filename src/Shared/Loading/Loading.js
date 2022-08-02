@@ -3,9 +3,9 @@ import Spinner from "react-bootstrap/Spinner";
 
 const Loading = () => {
   return (
-    <div className="text-center my-5">
+    <div className="text-center my-5 py-5">
       <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
+        <span className="visually-hidden py-5">Loading...</span>
       </Spinner>
     </div>
   );

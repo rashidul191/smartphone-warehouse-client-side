@@ -27,7 +27,6 @@ const MyItems = () => {
       })
          .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           const remainItem = myItems.filter((item) => item._id !== id);
           setMyItems(remainItem);
         });
