@@ -11,7 +11,7 @@ const MyItems = () => {
   useEffect(() => {
     const getMyItems = async () => {
       const email = user?.email;
-      const url = `https://pacific-castle-49013.herokuapp.com/product?email=${email}`;
+      const url = `https://smartphone-warehouse-server.onrender.com/product?email=${email}`;
       const { data } = await axios.get(url);
       setMyItems(data);
     };
@@ -21,7 +21,7 @@ const MyItems = () => {
   const handleDeleteItem = (id) => {
     const proceed = window.confirm("Are you sure? Delete it!");
     if (proceed) {
-      const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
+      const url = `https://smartphone-warehouse-server.onrender.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

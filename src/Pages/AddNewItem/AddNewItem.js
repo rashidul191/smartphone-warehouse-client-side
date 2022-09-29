@@ -18,7 +18,7 @@ const AddNewItem = () => {
       data?.quantity &&
       data?.supplierName
     ) {
-      const url = `https://pacific-castle-49013.herokuapp.com/product`;
+      const url = `https://smartphone-warehouse-server.onrender.com/product`;
       fetch(url, {
         method: "POST",
         headers: { "content-type": "application/json" },

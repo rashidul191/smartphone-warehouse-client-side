@@ -10,7 +10,7 @@ const ManageInventoryes = () => {
   const [products, setProduct] = useInventory();
 
   useEffect(() => {
-    const url = `https://pacific-castle-49013.herokuapp.com/products`;
+    const url = `https://smartphone-warehouse-server.onrender.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -41,7 +41,7 @@ const ManageInventoryes = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          const url = `https://pacific-castle-49013.herokuapp.com/product/${id}`;
+          const url = `https://smartphone-warehouse-server.onrender.com/product/${id}`;
           fetch(url, {
             method: "DELETE",
           })
